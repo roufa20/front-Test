@@ -1,0 +1,49 @@
+            .shell {
+                width:300px;    
+            }
+            .shell ol li {
+                list-style:none;     
+            }
+            
+            .shell a {
+                color: white;
+                display: block;
+                width: 100%;
+                height:30px;
+                margin: .5em 0;
+                padding: 5px 10px;
+                font-weight:bold;
+                border: 1px solid #999;
+                border-radius: 3px;
+                text-decoration:none;
+                background-color: #33C3F0;
+                cursor: pointer;
+            }
+            #Global
+            {
+                width:100%;
+            }
+            #Global #gauche
+            {
+                float:left;
+                width:20%;
+            }
+            #Global #droite
+            {
+               margin-left:25%;
+               margin-top:20px    
+            }
+            ol { 
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            li {
+                flex: 0 0 auto;
+            }
+
+/* CSS used here will be applied after bootstrap.css */
+.modal-body img{
+    width:100%;
+    height:100%;
+  }

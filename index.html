@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+    svg {
+            height: 100%;
+        }
+
+        path.slice{
+            stroke-width:2px;
+        }
+
+        polyline{
+            opacity: .3;
+            stroke: black;
+            stroke-width: 2px;
+            fill: none;
+        }
+
+        .labelValue
+        {
+            font-size: 60%;
+            opacity: .5;
+            
+        }
+
+        .toolTip {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            position: absolute;
+            display: none;
+            width: auto;
+            height: auto;
+            background: none repeat scroll 0 0 white;
+            border: 0 none;
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: -3px 3px 15px #888888;
+            color: black;
+            font: 12px sans-serif;
+            padding: 5px;
+            text-align: center;
+        }
+        text {
+          font: 12px sans-serif;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Test Integration</a>
+            </div>
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> List of test <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+    
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dashboard <small>Statistics Overview</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                        <div style="margin-top: 10px;" class="showHide">Number Total Of tests!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">                              
+                            </a>
+                        </div>
+                    </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"  style="background-color: #33C3F0;">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-comments fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                        <div style="margin-top: 10px;" class="showHide">Last Test</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                        <div style="margin-top: 10px;" class="showHide">Last File Tested</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Test By Time Panel</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Order #</th>
+                                                <th>Test Date</th>
+                                                <th>Test Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tbody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-right">
+                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 hideShow">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Test</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="dont"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-4 hideShow" >
+                        <div class="panel panel-default" style="border: none;">
+                            <a href="javascript:void(viewer.show(0))">
+                            <i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i>
+                            </a>
+                            <div class="errorImg"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->  
+
+                <!-- Iframe Start -->    
+                <div class= "IfarmeContainer">
+                    
+                  <iframe id="frameId" class="frame" style="display:none" src="" style="width: 100%; height: 500px;"></iframe>
+                </div>
+                <!-- Iframe End -->                  
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+    <script type="text/javascript"   src="js/slide.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+
+ <script type="text/javascript">
+
+$('.hideShow').hide(); 
+var viewer = new PhotoViewer();
+var numberTotalOfTest = 0;
+var lasttestDone = "";
+var frameName = "";
+var boucleNumber = 1;
+$.get("output/result/", function(data) {
+    var $s = $("#demo");
+    var links = $(data).find("a");
+
+    links.each(function() {
+        var href = $(this).attr("href");
+
+        if (href.charAt(0) != "?" && href.charAt(0) != "/") {
+            frameName = $(this).text();
+            var allTime = $(this).text().replace('.html', '').replace('test', '').replace(/_+/g, '/');
+            var res = allTime.split("/");
+            $s.append("<li><a href='#' class='frameChange'>" + $(this).text().replace(/_+/g, " ") + "</a></li>");
+            $('.tbody').append("<tr><td>" + boucleNumber + "</td><td>" + res[0] + "/" + res[1] + "/" + res[2] + "</td><td>" + res[3] + "</td></tr>");
+            numberTotalOfTest++;
+            boucleNumber++;
+            lasttestDone = frameName;
+        }
+    });
+
+    $($('.huge')[0]).text(numberTotalOfTest + " Test");
+    $($('.huge')[2]).text(frameName);
+    $($('.huge')[1]).text(frameName.replace('.html', "").replace('test', "").replace(/_+/g, "/"));
+
+    //document.getElementById('frameId').src = "output/result/" + frameName;
+    var dir = "img/" + frameName.replace(/ /g, "_").replace('.html', "").replace('test', "");
+    var fileextension = ".png";
+    $.ajax({
+        url: dir,
+        success: function(data) {
+            $(data).find("a:contains(" + fileextension + ")").each(function() {
+                var filename = this.text;
+                viewer.add(dir + '/' + filename);
+            });
+        }
+    });
+
+
+
+    $(".frameChange").click(function() {
+        viewer.photos = [];
+        $('#frameId').show().width('90%').height('800px');
+        document.getElementById('frameId').src = "output/result/" + $(this).text().replace(/ /g, "_");
+        $('.page-header').text($(this).text().replace('.html', "").replace('test', "").replace(/_+/g, "/"));
+        var dir = "img/" + $(this).text().replace(/ /g, "_").replace('.html', "").replace('test', "");
+        var fileextension = ".png";
+        $.ajax({
+            url: dir,
+            success: function(data) {
+                $(data).find("a:contains(" + fileextension + ")").each(function() {
+                    var filename = this.text;
+                    viewer.add(dir + '/' + filename);
+                     $('.errorImg').text("");
+                });
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                $('.errorImg').text("Failure there is no screenshot Found");
+            }  
+        });
+        setTimeout(function() {
+
+            var SucessAndFailerTest = document.getElementById("frameId").contentWindow.junit_info.tests;
+
+            $($('.huge')[0]).text(SucessAndFailerTest.count + " Total Test");
+            $($('.huge')[1]).text(SucessAndFailerTest.passed + " Passed Test");
+            if (SucessAndFailerTest.failure) {
+                $($('.huge')[2]).text(SucessAndFailerTest.failure + " Failure Test");
+            } else {
+                $($('.huge')[2]).text("0 Failure Test");
+            }
+            $('.showHide').hide();
+            $('.hideShow').show();
+            (function(d3) {
+                'use strict';
+
+                var dataset = [{
+                    label: 'passed',
+                    count: SucessAndFailerTest.passed
+                }, {
+                    label: 'failure',
+                    count: SucessAndFailerTest.failure
+                }];
+
+                var width = 360;
+                var height = 360;
+                var radius = Math.min(width, height) / 2;
+                var donutWidth = 75;
+                var legendRectSize = 18;
+                var legendSpacing = 4;
+                var color = d3.scale.ordinal()
+                    .range(["#5cb85c", "#d9534f"])
+                d3.selectAll("svg").remove();
+                var svg = d3.select('#dont')
+                    .append('svg')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .append('g')
+                    .attr('transform', 'translate(' + (width / 2) +
+                        ',' + (height / 2) + ')');
+                var arc = d3.svg.arc()
+                    .innerRadius(radius - donutWidth)
+                    .outerRadius(radius);
+                var pie = d3.layout.pie()
+                    .value(function(d) {
+                        return d.count;
+                    })
+                    .sort(null);
+                var path = svg.selectAll('path')
+                    .data(pie(dataset))
+                    .enter()
+                    .append('path')
+                    .attr('d', arc)
+                    .attr('fill', function(d, i) {
+                        return color(d.data.label);
+                    });
+                var legend = svg.selectAll('.legend')
+                    .data(color.domain())
+                    .enter()
+                    .append('g')
+                    .attr('class', 'legend')
+                    .attr('transform', function(d, i) {
+                        var height = legendRectSize + legendSpacing;
+                        var offset = height * color.domain().length / 2;
+                        var horz = -2 * legendRectSize;
+                        var vert = i * height - offset;
+                        return 'translate(' + horz + ',' + vert + ')';
+                    });
+                legend.append('rect')
+                    .attr('width', legendRectSize)
+                    .attr('height', legendRectSize)
+                    .style('fill', color)
+                    .style('stroke', color);
+                legend.append('text')
+                    .attr('x', legendRectSize + legendSpacing)
+                    .attr('y', legendRectSize - legendSpacing)
+                    .text(function(d) {
+                        if (d == "passed" && dataset[0].count) {
+
+                            var countAll = dataset[0].count
+                        } else if (d == "failure" && dataset[1].count) {
+                            var countAll = dataset[1].count
+                        } else {
+                            var countAll = 0;
+                        };
+                        return d + " test " + countAll;
+                    });
+
+            })(window.d3);
+
+        }, 200);
+
+    })
+
+});
+ </script>
+</body>
+
+</html>
